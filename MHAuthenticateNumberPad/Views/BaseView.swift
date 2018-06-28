@@ -1,0 +1,112 @@
+//
+//  BaseView.swift
+//  SNSGeldmaatje
+//
+//  Created by Maiko Hermans on 22/05/2018.
+//  Copyright (c) 2018 dtt. All rights reserved.
+//
+//  REMINDER:
+//
+//  If you need help or don't remember how to, first take a look at the code conventions:
+//  https://docs.google.com/document/d/1vFtsnmMlqilCOF4Y087AMRdCsp_CwhzR6wRVkzb7eIw/edit?usp=sharing
+//  
+//  BUT WAIT there is more!
+//  The official raywenderlich.com Swift Style Guide. 
+//  https://github.com/raywenderlich/swift-style-guide
+//
+
+import UIKit
+
+/// 🤖 The base for all the UIView classes. Contains all the required functions.
+@IBDesignable
+public class BaseView: UIView
+{
+  
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupViewWithXib()
+        initLayout()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setupViewWithXib()
+        initLayout()
+    }
+    
+    public override func awakeFromNib() {
+        setupLayout()
+    }
+    
+    /// Attach the view to the delegate from the viewcontroller.
+    ///
+    /// - Parameter controller: The viewcontroller which this view is part of.
+    func attachView(presenter: AnyObject, controller: UIViewController) {
+        
+    }
+    
+    /**
+     Called upon when creating the view. Use for setting up layout objects like color, text etc.
+     
+     ## Example ##
+     ```
+     func initLayout() {
+        setupLabels()
+        setupButtons()
+        setupTextFields()
+     }
+     ```
+    */
+    func initLayout() {
+        
+    }
+    
+    /**
+     Called upon to create the layout for the required objects. Use this when you need to set objects after the view properties are available
+     
+     ## Example ##
+     ```
+     func setupLayout() {
+        setupNewView()
+        setupNewScrollView()
+        setupNewButton()
+     }
+     ```
+     */
+    func setupLayout() {
+        
+    }
+    
+}
+
+// MARK: - Private functions
+extension BaseView {
+    
+    /// Setup the view based on the xib that matches the file name.
+    fileprivate func setupViewWithXib() {
+        let view = viewFromNibForClass()
+        view.frame = bounds
+        
+        view.autoresizingMask = [
+            UIViewAutoresizing.flexibleWidth,
+            UIViewAutoresizing.flexibleHeight
+        ]
+        
+        addSubview(view)
+    }
+    
+    
+    /// Get the correct view from the xib.
+    ///
+    /// - Returns: The view loaded from the matching XIB file.
+    fileprivate func viewFromNibForClass() -> UIView {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        
+        return view
+    }
+    
+}

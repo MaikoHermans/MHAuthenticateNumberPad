@@ -1,0 +1,6 @@
+framework module Pods_MHAuthenticateNumberPad {
+  umbrella header "Pods-MHAuthenticateNumberPad-umbrella.h"
+
+  export *
+  module * { export * }
+}
