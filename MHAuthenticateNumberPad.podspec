@@ -4,7 +4,6 @@ Pod::Spec.new do |s|
   s.name          = "MHAuthenticateNumberPad"
   s.version       = "0.0.1"
   s.summary       = "A keyboard in the shape of Apple's numberpad with the option to use the biometrics iOS provides from the keyboard."
-  s.description  = "Make it possible to trigger the iOS biometrics options from the keyboard when using a numberpad."
   s.requires_arc  = true
   s.swift_version   = '4.0'
 
