@@ -1,9 +1,9 @@
 <html>
 <H1 align="center">MHAuthenticateNumberPad</H1>
 <p align="center">
-  <img src="https://img.shields.io/github/stars/MaikoHermans/MHInteractiveClock.svg" alt="Github stars"/>
-  <img src="https://img.shields.io/github/issues/MaikoHermans/MHInteractiveClock.svg" alt="GitHub issues"/>
-  <img src="https://img.shields.io/github/license/MaikoHermans/MHInteractiveClock.svg" alt="GitHub license"/>
+  <img src="https://img.shields.io/github/stars/MaikoHermans/MHAuthenticateNumberPad.svg" alt="Github stars"/>
+  <img src="https://img.shields.io/github/issues/MaikoHermans/MHAuthenticateNumberPad.svg" alt="GitHub issues"/>
+  <img src="https://img.shields.io/github/license/MaikoHermans/MHAuthenticateNumberPad.svg" alt="GitHub license"/>
   </p>
 </html>
 
