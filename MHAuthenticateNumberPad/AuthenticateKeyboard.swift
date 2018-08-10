@@ -1,6 +1,5 @@
 //
 //  File.swift
-//  SNSGeldmaatje
 //
 //  Created by Maiko Hermans on 05/06/2018.
 //  Copyright © 2018 dtt. All rights reserved.
