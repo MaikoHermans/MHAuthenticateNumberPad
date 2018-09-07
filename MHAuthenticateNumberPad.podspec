@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.platform          = :ios
   s.ios.deployment_target   = '11.0'
   s.name          = "MHAuthenticateNumberPad"
-  s.version       = "0.0.1"
+  s.version       = "0.0.2"
   s.summary       = "A keyboard in the shape of Apple's numberpad with the option to use the biometrics iOS provides from the keyboard."
   s.requires_arc  = true
   s.swift_version   = '4.0'

@@ -1,0 +1,6 @@
+framework module Pods_UnlockKeyboardTestUITests {
+  umbrella header "Pods-UnlockKeyboardTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

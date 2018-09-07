@@ -20,7 +20,7 @@ enum Errors: Int {
 /// - noLocalAuthorize: no biometrics present on the device or not enrolled.
 /// - localAuthorizeSuccess: successfull authorization of the device using biometrics.
 /// - localAuthorizeFailed: unsuccessfull authoriation of the device using biometrics.
-enum UnlockState {
+public enum UnlockState {
     case noLocalAuthorize
     case localAuthorizeSuccess
     case localAuthorizeFailed

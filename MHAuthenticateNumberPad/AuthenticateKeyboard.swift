@@ -11,7 +11,7 @@ import IQKeyboardManager
 import LocalAuthentication
 
 /// ⌨️ Keyboard Delegate.
-protocol AuthenticateKeyboardDelegate: class {
+public protocol AuthenticateKeyboardDelegate: class {
     func didAuthenticate(_ result: UnlockState)
 }
 
@@ -33,7 +33,7 @@ public class AuthenticateKeyboard: BaseView {
     private var keyContainerLandscapeConstraints: [NSLayoutConstraint] = []
     
     /// The delegate for the Keyboard.
-    weak var delegate: AuthenticateKeyboardDelegate?
+    public weak var delegate: AuthenticateKeyboardDelegate?
     /// Specify whether the keyboard needs to be able to perform biometric capabilities or not.
     public var useBiometrics: Bool = true { didSet { initKeyBoard() } }
     

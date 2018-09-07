@@ -1,0 +1,23 @@
+PODS:
+  - IQKeyboardManager (6.0.4)
+  - MHAuthenticateNumberPad (0.0.1):
+    - IQKeyboardManager (= 6.0.4)
+
+DEPENDENCIES:
+  - MHAuthenticateNumberPad (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IQKeyboardManager
+
+EXTERNAL SOURCES:
+  MHAuthenticateNumberPad:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  MHAuthenticateNumberPad: 5e11c8a940945de57b110952d06fe4d9249838ad
+
+PODFILE CHECKSUM: 75936f53e8a1ce9b202ee8565aed98a0bdd56684
+
+COCOAPODS: 1.5.3

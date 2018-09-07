@@ -1,0 +1,6 @@
+framework module MHAuthenticateNumberPad {
+  umbrella header "MHAuthenticateNumberPad-umbrella.h"
+
+  export *
+  module * { export * }
+}
