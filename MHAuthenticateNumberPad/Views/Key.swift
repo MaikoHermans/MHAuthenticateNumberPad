@@ -56,21 +56,25 @@ class Key: UIButton {
      Even when a phone has biometric capabilities, when the user hasn't set them up the type will be none.
      sets the corresponding image for the key with the unlock type.
     */
-    var biometricsType: LABiometryType? {
+    var biometricsType: Any? {
         didSet {
-            if let biometricsType = biometricsType, keyType == .unlock {
-                switch biometricsType {
-                case .faceID:
-                    let faceIdImage = UIImage(named: "ic_face_id", in: Bundle(for: self.classForCoder), compatibleWith: nil)
-                    setImage(faceIdImage, for: .normal)
-                    isUserInteractionEnabled = true
-                case .touchID:
-                    let touchIdImage = UIImage(named: "ic_touch_id", in: Bundle(for: self.classForCoder), compatibleWith: nil)
-                    setImage(touchIdImage, for: .normal)
-                    isUserInteractionEnabled = true
-                case .none:
-                    setImage(UIImage(), for: .normal)
-                    isUserInteractionEnabled = false
+            if #available(iOS 11.0, *) {
+                guard let biometricsType = biometricsType as? LABiometryType else { return }
+                
+                if keyType == .unlock {
+                    switch biometricsType {
+                    case .faceID:
+                        let faceIdImage = UIImage(named: "ic_face_id", in: Bundle(for: self.classForCoder), compatibleWith: nil)
+                        setImage(faceIdImage, for: .normal)
+                        isUserInteractionEnabled = true
+                    case .touchID:
+                        let touchIdImage = UIImage(named: "ic_touch_id", in: Bundle(for: self.classForCoder), compatibleWith: nil)
+                        setImage(touchIdImage, for: .normal)
+                        isUserInteractionEnabled = true
+                    case .none:
+                        setImage(UIImage(), for: .normal)
+                        isUserInteractionEnabled = false
+                    }
                 }
             }
         }

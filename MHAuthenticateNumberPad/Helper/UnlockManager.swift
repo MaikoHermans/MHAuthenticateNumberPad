@@ -10,6 +10,7 @@ import Foundation
 import LocalAuthentication
 
 /// 📚 Manager for Authorizing with the biometrics available on the device.
+@available(iOS 11.0, *)
 class UnlockingManager {
     
     static func authenticate(unlockReason: String, completion: @escaping (_ result: Bool, _ error: Error?) -> ()){

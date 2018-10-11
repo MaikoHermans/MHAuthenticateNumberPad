@@ -106,26 +106,44 @@ public class AuthenticateKeyboard: BaseView {
         rowFourButtons[1].value = "0"
         rowFourButtons[2].keyType = .backspace
         
-        checkBiometrics()
+        if #available(iOS 11.0, *) {
+            checkBiometrics()
+        }
     }
     
     /// Create the required constraints for both portrait and landscape orientation.
     private func createConstraints() {
         keyContainer.translatesAutoresizingMaskIntoConstraints = false
         
-        keyContainerPortraitConstraints.append(contentsOf: [
-            keyContainer.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor),
-            keyContainer.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor),
-            keyContainer.topAnchor.constraint(equalTo: topAnchor),
-            keyContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-        ])
-        
-        keyContainerLandscapeConstraints.append(contentsOf: [
-            keyContainer.topAnchor.constraint(equalTo: topAnchor),
-            keyContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            keyContainer.centerXAnchor.constraint(equalTo: centerXAnchor),
-            keyContainer.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
-        ])
+        if #available(iOS 11.0, *) {
+            keyContainerPortraitConstraints.append(contentsOf: [
+                keyContainer.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor),
+                keyContainer.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor),
+                keyContainer.topAnchor.constraint(equalTo: topAnchor),
+                keyContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+                ])
+            
+            keyContainerLandscapeConstraints.append(contentsOf: [
+                keyContainer.topAnchor.constraint(equalTo: topAnchor),
+                keyContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+                keyContainer.centerXAnchor.constraint(equalTo: centerXAnchor),
+                keyContainer.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
+                ])
+        } else {
+            keyContainerPortraitConstraints.append(contentsOf: [
+                keyContainer.leftAnchor.constraint(equalTo: leftAnchor),
+                keyContainer.rightAnchor.constraint(equalTo: rightAnchor),
+                keyContainer.topAnchor.constraint(equalTo: topAnchor),
+                keyContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
+                ])
+            
+            keyContainerLandscapeConstraints.append(contentsOf: [
+                keyContainer.topAnchor.constraint(equalTo: topAnchor),
+                keyContainer.bottomAnchor.constraint(equalTo: bottomAnchor),
+                keyContainer.centerXAnchor.constraint(equalTo: centerXAnchor),
+                keyContainer.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
+                ])
+        }
     }
     
     /// Change the constraints to based on the device orientation.
@@ -158,9 +176,11 @@ extension AuthenticateKeyboard: KeyDelegate {
     */
     func didPressUnlock() {
         editingTextField.resignFirstResponder()
-        authorizeLocally { [weak self] (state) in
-            DispatchQueue.main.async {
-                self?.delegate?.didAuthenticate(state)
+        if #available(iOS 11.0, *) {
+            authorizeLocally { [weak self] (state) in
+                DispatchQueue.main.async {
+                    self?.delegate?.didAuthenticate(state)
+                }
             }
         }
     }
@@ -173,6 +193,7 @@ extension AuthenticateKeyboard: KeyDelegate {
 }
 
 // MARK: Unlocking Methods
+@available(iOS 11.0, *)
 extension AuthenticateKeyboard {
     
     /// Try to authorize the user using biometrics.

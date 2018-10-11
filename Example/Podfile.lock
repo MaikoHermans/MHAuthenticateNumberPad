@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManager (6.0.4)
-  - MHAuthenticateNumberPad (0.0.1):
+  - MHAuthenticateNumberPad (0.0.2):
     - IQKeyboardManager (= 6.0.4)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
-  MHAuthenticateNumberPad: 5e11c8a940945de57b110952d06fe4d9249838ad
+  MHAuthenticateNumberPad: 9a93a24ce58f0129ffaf29b8cbc6c1a1404866c6
 
 PODFILE CHECKSUM: 75936f53e8a1ce9b202ee8565aed98a0bdd56684
 
