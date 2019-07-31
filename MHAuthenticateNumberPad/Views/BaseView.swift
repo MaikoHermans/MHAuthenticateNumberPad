@@ -1,19 +1,3 @@
-//
-//  BaseView.swift
-//  SNSGeldmaatje
-//
-//  Created by Maiko Hermans on 22/05/2018.
-//  Copyright (c) 2018 dtt. All rights reserved.
-//
-//  REMINDER:
-//
-//  If you need help or don't remember how to, first take a look at the code conventions:
-//  https://docs.google.com/document/d/1vFtsnmMlqilCOF4Y087AMRdCsp_CwhzR6wRVkzb7eIw/edit?usp=sharing
-//  
-//  BUT WAIT there is more!
-//  The official raywenderlich.com Swift Style Guide. 
-//  https://github.com/raywenderlich/swift-style-guide
-//
 
 import UIKit
 
