@@ -1,9 +1,3 @@
-//
-//  File.swift
-//
-//  Created by Maiko Hermans on 05/06/2018.
-//  Copyright © 2018 All rights reserved.
-//
 
 import UIKit
 import IQKeyboardManager
